@@ -104,8 +104,7 @@ function setupNoteEvents() {
       if (!noteIdAttr) return;
       const noteId = Number(noteIdAttr);
       if (!Number.isFinite(noteId)) return;
-      // Navigate to add-note page in edit mode using id
-      window.location.href = `add-note-page/add-note.html?edit=${encodeURIComponent(
+      window.location.href = `/add-note.html?edit=${encodeURIComponent(
         String(noteId)
       )}`;
     }
@@ -307,7 +306,7 @@ function addNote() {
     localStorage.setItem("data", JSON.stringify(payload));
 
     if (isEdit) {
-      window.location.href = "../index.html";
+      window.location.href = "index.html";
       return;
     }
 
